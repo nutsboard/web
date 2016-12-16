@@ -1,294 +1,407 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html dir="ltr" class="client-js" lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8"><title>VAR-SOM-MX6 - Variscite Wiki</title>
+<meta name="generator" content="MediaWiki 1.22.0">
+<link rel="shortcut icon" href="http://variwiki.com/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://variwiki.com/opensearch_desc.php" title="Variscite Wiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://variwiki.com/api.php?action=rsd">
+<link rel="alternate" type="application/atom+xml" title="Variscite Wiki Atom feed" href="http://variwiki.com/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="stylesheet" href="static/download/css/load.css">
+<link rel="stylesheet" href="static/download/css/print.css" media="print">
+<link rel="stylesheet" href="static/download/css/cavendish.css" media="screen">
+<!--[if IE 6]><link rel="stylesheet" href="/skins/cavendish/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/cavendish/IE70Fixes.css?303" media="screen" /><![endif]-->
+<link rel="stylesheet" href="VAR-SOM-MX6%20-%20Variscite%20Wiki_files/blue.css" media="screen">
+<link rel="stylesheet" href="VAR-SOM-MX6%20-%20Variscite%20Wiki_files/extensions.css" media="screen">
+<link rel="stylesheet" href="VAR-SOM-MX6%20-%20Variscite%20Wiki_files/style.css" media="screen"><style>
+.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: NewVarisciteWiki:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.autoellipsis-matched,.highlight{font-weight:bold}
+/* cache key: NewVarisciteWiki:resourceloader:filter:minify-css:7:9780324491b653a3780e2d029bdc140c */
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;-webkit-box-shadow:0 2px 5px 0 #ccc;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABblBMVEUAAAD///////9PfTf///80aRdTgjn///9Feij///////////9Rfzf///////////9PfjZRgDh1o1xOfTb///////+bwYqLtnj///////9PfTa82K////9WhT6YxIL///9QgDdTgzr////////j7uDl7eLq8efi693k7OH///////9UhjuBr2rp9uRUhjr///9YljVKgir///9WiTlYjT3////9/v57vFlbkT5PjC9dlD/5/fhuq09stUTs9uhxuElctCpfnT1huDFloEZloUZmpENmvDZpvDxpvTxqvjxrvT5rvT9rwTxsqktswD5uwkBvuUdxw0NztFBztU9ztVBzwkp0tlJ1xkd2t1R3uVR4w1F4xk54x014yE15uVZ5v1R5xVB6v1R7yFJ8wVh9xVl9yFR9yVd9ylN+xVh+yFd/x1l/yFeAylmEx1+Ny2uY0Hqe04Wj1Ymv3Ze33qLD47TJ5L3O6cPU7Mrq9eb2+/Q4j37OAAAAQHRSTlMAAQIEBAUFBQwPFB4fJCUoKiosQEhJS01RUlZZXmdydXaChYuSlJSWmJmoq6uur8LExcvM19fg5ejt8fX2+Pr7SljgewAAAKpJREFUGBkFwQNCAwAAAMDLtl3LtrG4rWXbtvX77gAgZ6grFwC0bhwNVgKgdPZx8b0dgLi+s7Wn0VoAqpfOI9+BNADZI7fLrz2pSEwGHZuH+78lSK8ZLkLezF3ooyUG3VPXq2USei9WngeyoG195yBYWDF3E/2pAhl1e9Gr8bGT+bfOFCC2fnvh4X7rcqIAQNNu+HT6sxkAjceTL/2ZAIhv+PorBwBJxfkA//dFHSCBy/UTAAAAAElFTkSuQmCC);background-image:url(/resources/mediawiki.action/images/green-checkmark.png?2015-10-17T03:53:20Z)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}
+/* cache key: NewVarisciteWiki:resourceloader:filter:minify-css:7:0f672996fe3b4b64765b887f3197f3e5 */</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{text-decoration:none;color:black}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}
+/* cache key: NewVarisciteWiki:resourceloader:filter:minify-css:7:52b1797f70c7e4094dfa4191101944e8 */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<style>a:lang(ar),a:lang(ckb),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: NewVarisciteWiki:resourceloader:filter:minify-css:7:f00d049a073b94a5c85d1677d85147bb */</style>
+
+<script src="VAR-SOM-MX6%20-%20Variscite%20Wiki_files/load_004.php"></script><script src="VAR-SOM-MX6%20-%20Variscite%20Wiki_files/load.php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"VAR-SOM-MX6","wgTitle":"VAR-SOM-MX6","wgCurRevisionId":7017,"wgRevisionId":7017,"wgArticleId":49,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["VAR-SOM-MX6"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"VAR-SOM-MX6","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgFCKEditorDir":"extensions/WYSIWYG/ckeditor/","wgFCKEditorExtDir":"extensions/WYSIWYG","wgFCKEditorToolbarSet":"Wiki","wgFCKEditorHeight":"0","wgCKeditorMagicWords":{"wikitags":["nowiki","includeonly","onlyinclude","noinclude","pre","gallery","source","syntaxhighlight","startfeed","endfeed","feedburner","itemtags"],"magicwords":["NOTOC","FORCETOC","TOC","NOEDITSECTION","NEWSECTIONLINK","NONEWSECTIONLINK","NOCONTENTCONVERT","NOCC","NOTITLECONVERT","NOTC","NOGALLERY","INDEX","NOINDEX","STATICREDIRECT","NOGALLERY","HIDDENCAT","START","END"],"datevars":["CURRENTYEAR","CURRENTMONTH","CURRENTMONTHNAME","CURRENTMONTHNAMEGEN","CURRENTMONTHABBREV","CURRENTDAY","CURRENTDAY2","CURRENTDOW","CURRENTDAYNAME","CURRENTTIME","CURRENTHOUR","CURRENTWEEK","CURRENTTIMESTAMP"],"wikivars":["SITENAME","SERVER","SERVERNAME","DIRMARK","SCRIPTPATH","CURRENTVERSION","CONTENTLANG","REVISIONID","REVISIONDAY","REVISIONDAY2","REVISIONMONTH","REVISIONYEAR","REVISIONTIMESTAMP","REVISIONUSER","FULLPAGENAME","PAGENAME","BASEPAGENAME","SUBPAGENAME","SUBJECTPAGENAME","TALKPAGENAME","NAMESPACE","ARTICLESPACE","TALKSPACE"],"parserhooks":["lc","lcfirst","uc","ucfirst","formatnum","#dateformat","padleft","padright","plural","grammar","#language","int","#tag","#int","#ns","#nse","#urlencode","#lcfirst","#ucfirst","#lc","#uc","#localurl","#localurle","#fullurl","#fullurle","#canonicalurl","#canonicalurle","#formatnum","#grammar","#gender","#plural","#numberofpages","#numberofusers","#numberofactiveusers","#numberofarticles","#numberoffiles","#numberofadmins","#numberingroup","#numberofedits","#numberofviews","#padleft","#padright","#anchorencode","#special","#speciale","#defaultsort","#filepath","#pagesincategory","#pagesize","#protectionlevel","#namespace","#namespacee","#namespacenumber","#talkspace","#talkspacee","#subjectspace","#subjectspacee","#pagename","#pagenamee","#fullpagename","#fullpagenamee","#rootpagename","#rootpagenamee","#basepagename","#basepagenamee","#subpagename","#subpagenamee","#talkpagename","#talkpagenamee","#subjectpagename","#subjectpagenamee","#formatdate","#displaytitle","#if","#ifeq","#switch","#ifexist","#ifexpr","#iferror","#expr","#time","#timel","#rel2abs","#titleparts","#itemtags"]},"wgCKeditorUseBuildin4Extensions":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":1,"previewonfirst":0,"previewontop":1,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"cavendish","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"vector-simplesearch":1,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":
+0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"useeditwarning":1,"prefershttps":1,"riched_use_toggle":1,"riched_start_disabled":0,"riched_use_popup":1,"riched_toggle_remember_state":1,"language":"en","variant-gan":"gan","variant-iu":"iu","variant-kk":"kk","variant-ku":"ku","variant-shi":"shi","variant-sr":"sr","variant-tg":"tg","variant-uz":"uz","variant-zh":"zh","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"variant":"en"});},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});},{},{});
+/* cache key: NewVarisciteWiki:resourceloader:filter:minify-js:7:ceb767f8cd71ec4aa2849f1b1fca2cef */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script><script src="VAR-SOM-MX6%20-%20Variscite%20Wiki_files/load_002.php"></script>
+<script async="" src="VAR-SOM-MX6%20-%20Variscite%20Wiki_files/load_003.php"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-VAR-SOM-MX6 skin-cavendish action-view">
+<div id="internal"></div>
+<!-- Skin-Version: 2.3.4 //Please leave this for bugtracking purpose//-->
+<div id="globalWrapper" class="view">
+	<div id="p-personal" class="portlet">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+						
+			<li id="pt-login" class="top-nav-element">
+				<span class="top-nav-left">&nbsp;</span>
+				<a class="top-nav-mid " href="http://variwiki.com/index.php?title=Special:UserLogin&amp;returnto=VAR-SOM-MX6">
+				   Log in</a>
+				<span class="top-nav-right">&nbsp;</span></li>
+							
+			</ul>
+		</div>
+	</div>
+	<div id="header">
+		<a name="top" id="contentTop"></a>
+		<h6>
+		<a href="http://variwiki.com/index.php?title=Main_Page" title="Main Page">VAR-SOM-MX6 - Variscite Wiki</a></h6>
+		<div id="p-cactions" class="portlet"><ul>
+
+				<li id="ca-nstab-main" class="selected"><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6" title="View the content page">Page</a></li>
+				<li id="ca-talk" class="new"><a href="http://variwiki.com/index.php?title=Talk:VAR-SOM-MX6&amp;action=edit&amp;redlink=1" title="Discussion about the content page">Discussion</a></li>
+				<li id="ca-viewsource"><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6&amp;action=edit" title="This page is protected.
+You can view its source">View source</a></li>
+				<li id="ca-history"><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6&amp;action=history" title="Past revisions of this page">History</a></li>			</ul></div>
+			            <div id="p-search" class="portlet" role="search">
+                <h3><label for="searchInput">Search</label></h3>
+                <div id="searchBody" class="pBody">
+                    <form action="/index.php" id="searchform">
+                        <input name="title" value="Special:Search" type="hidden">
+                        <input name="search" placeholder="Search" title="Search Variscite Wiki [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off" type="search">
+                        <input name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton" type="submit">&nbsp;
+                            <input name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton" type="submit">
+                    </form>
+                </div>
+            </div>
+            	</div>
+	<div id="mBody">
+		<div id="side">
+			<div id="nav">
+	<div class="generated-sidebar portlet" id="p-Navigation" role="navigation">
+            <h3>Navigation</h3>
+            <div class="pBody">
+                                    <ul>
+                                                    <li id="n-Main-Page"><a href="http://variwiki.com/index.php?title=Main_Page">Main Page</a></li>
+                                                    <li id="n-Variscite-Web-Site"><a href="http://www.variscite.com/" rel="nofollow">Variscite Web Site</a></li>
+                                            </ul>
+                                </div>
+        </div>
+                    <div class="portlet" id="p-tb" role="navigation">
+                <h3>Tools</h3>
+                <div class="pBody">
+                    <ul>
+                                                    <li id="t-whatlinkshere"><a href="http://variwiki.com/index.php?title=Special:WhatLinksHere/VAR-SOM-MX6" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+                                                        <li id="t-recentchangeslinked"><a href="http://variwiki.com/index.php?title=Special:RecentChangesLinked/VAR-SOM-MX6" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+                                                        <li id="t-specialpages"><a href="http://variwiki.com/index.php?title=Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li>
+                                                        <li id="t-print"><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>
+                                                        <li id="t-permalink"><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6&amp;oldid=7017" title="Permanent link to this revision of the page">Permanent link</a></li>
+                                                        <li id="t-info"><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6&amp;action=info">Page information</a></li>
+                                                </ul>
+                </div>
+            </div>
+            </div>
+</div>
+		</div><!-- end of SIDE div -->
+		<div id="column-content">
+			<div id="content">
+				<a id="top"></a>
+								<h1 id="firstHeading" class="firstHeading">VAR-SOM-MX6</h1>
+				<div id="bodyContent">
+					<h3 id="siteSub">From Variscite Wiki</h3>
+					<div id="contentSub"></div>
+															<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>					<!-- start content -->
+					<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><div style="width:100%; min-width:1000px;">
+<table>
+
+</table><table style="padding:15px; background-color: #0055a5; color: white; width:100%; font-size:25px; border-top-left-radius:5px; border-top-right-radius:5px;">
+<tbody><tr>
+<td>VAR-SOM-MX6
+</td></tr></tbody></table>
 
 
+<table style="background-color: #F0F0FF; width:100%;">
+<tbody><tr>
+<td style="width:250px; padding:5px 25px 5px 25px;"><a href="http://variwiki.com/index.php?title=File:Vsm-mx6-v2.png" class="image" title="VAR-SOM-MX6"><img alt="VAR-SOM-MX6" src="VAR-SOM-MX6%20-%20Variscite%20Wiki_files/261px-Vsm-mx6-v2.png" srcset="/images/thumb/9/9f/Vsm-mx6-v2.png/392px-Vsm-mx6-v2.png 1.5x, /images/thumb/9/9f/Vsm-mx6-v2.png/523px-Vsm-mx6-v2.png 2x" width="261" height="200"></a>
+</td>
+<td style="padding:20px 30px 0px 0px; vertical-align:top; font-size:17px;">Supporting
+ the i.MX 6 Quad/Dual/DualLite/Single, the VAR-SOM-MX6 allows designers 
+to use a single System on Module in a broad range of applications to 
+achieve short time-to-market for their current innovations, while still 
+accommodating potential R&amp;D directions and marketing opportunities. 
+This versatile solution’s -40 to 85 °C temperature range and Dual CAN 
+support is ideal for industrial applications, while 1080p video and 
+graphics accelerations make it equally suitable for intensive multimedia
+ applications.<br><br><br><br><a rel="nofollow" class="external text" href="http://www.variscite.com/products/system-on-module-som/cortex-a9/var-som-mx6-cpu-freescale-imx6">Click here for more information on this product</a><br><a rel="nofollow" class="external text" href="http://variscite.com/support-forum/index.php">Click here for the Variscite support forums</a>
+</td></tr></tbody></table>
 
+</div>
+<div style="overflow:hidden; padding-top:20px; min-width:1000px; margin-top:-33px;">
+<div style="width:75%;">
+<p>
+</p><p><br>
+</p>
+<div style="width:21%; float:left; padding:0px 2% 0px 0px; display:inline-block;">
+<table>
 
+</table><table style="padding:10px; background-color: #4f9df2; color: white; font-size:20px; width:100%; border-top-left-radius:5px; border-top-right-radius:5px;">
 
+<tbody><tr>
+<td>Yocto
+</td></tr></tbody></table>
+<table style="background-color: #d7e4f2; width:100%; height:540px;">
 
-<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<meta content="IE=edge" http-equiv="X-UA-Compatible">
-
-
-
-
-
-<script type="text/javascript" async="" src="Android%20Things%20%7C%20Android%20Things_files/linkid.js"></script><script async="" src="Android%20Things%20%7C%20Android%20Things_files/analytics.js"></script><script>var a=window.devsite||{};window.devsite=a;a.readyCallbacks=[];window.devsite.readyCallbacks=a.readyCallbacks;a.ready=function(b){a.readyCallbacks.push(b)};window.devsite.ready=a.ready;
-</script>
-
-<meta charset="utf-8">
-
-<meta name="xsrf_token" content="ieAx1m_kbsn8GGc5bhDDX4IgXDNjKr0mcKb88V87Cm86MTQ4MTY4NjYwMDM0NDQ4MA">
-
-
-  <link rel="canonical" href="https://developer.android.com/things/index.html">
-
-
-
-  <link rel="alternate" href="https://developer.android.com/things/index.html" hreflang="en">
-
-  <link rel="alternate" href="https://developer.android.google.cn/things/index.html" hreflang="en-cn">
-
-
-<link rel="alternate" href="https://developer.android.com/things/index.html" hreflang="x-default">
-
-
-
-
-<link rel="shortcut icon" href="https://developer.android.com/favicon.ico">
-
-<link rel="apple-touch-icon" href="https://developer.android.com/images/brand/Android_Robot_200.png">
-
-
-<title>
-
-  NutsBoard : The Poweful Industrial Boards
-
-</title>
-<meta name="description" content="Build devices based on the Android Things platform.">
-
-<!-- STYLESHEETS -->
-<link rel="stylesheet" href="static/index/css/css_002.css">
-<link rel="stylesheet" href="static/index/css/css.css" title="roboto">
-<link href="static/index/css/default.css" rel="stylesheet" type="text/css">
-<!-- JAVASCRIPT -->
-<script src="static/index/js/android_3p-bundle.js" type="text/javascript"></script>
-<script src="static/index/js/script_foot_closure_android.js"></script>
-<script src="static/index/js/script_foot_android.js"></script>
-
-<script type="text/javascript">
-  var toRoot = '/';
-  var useUpdatedTemplates = true;
-  devsite.permissions.init({"dbf0e738b8ca34a787d59b20daa90e83": true, "5d17cf7d98343d37cdc5bede08b7b28e": true, "098dafe57affddc137df300142652cfd": false, "cb025a64a50094835616312f4774a53d": true, "e243c7e32cf8217137654928e1480ad1": true, "51470233c56fc1fde50f00b73c52b216": false, "6decc2350b46d7e6433a3c4ae1ab018f": true, "752953480de00a336d911a46966cc16d": false, "700def1a83e356c06c0925afb05de4b0": false, "6749dcb526ce9bde6993550c7d928d24": true});
-
-  
-  var useDevsiteMetadata = true;
-
-  var replaceBlog = false;
-  var replaceYouTube = false;
-  var customSearchEnabled = true;
-  var siteDefaultLocale = 'en';
-
-  var ANDROID_LANGUAGES = [
-      'id','en','es','pt-br','vi','ru','ja','zh-cn','zh-tw','ko'
-  ];
-</script>
-<script src="static/index/js/docs.js" type="text/javascript"></script>
-
-
-
-</head>
-
-<body class="gc-documentation dac-things no-crumbs hardware  dac-nav-open" itemscope="" itemtype="http://schema.org/Article">
-
-    <input class="google-analytics-id-json" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: &quot;en&quot;, &quot;dimension4&quot;: &quot;Android Things&quot;, &quot;dimension5&quot;: &quot;en&quot;, &quot;dimension3&quot;: false, &quot;dimension1&quot;: &quot;Signed out&quot;, &quot;dimension8&quot;: null}, &quot;gaid&quot;: &quot;UA-49880327-2&quot;}" type="hidden">
-
-    <input class="google-analytics-id-json" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: &quot;en&quot;, &quot;dimension4&quot;: &quot;Android Things&quot;, &quot;dimension5&quot;: &quot;en&quot;, &quot;dimension3&quot;: false, &quot;dimension1&quot;: &quot;Signed out&quot;, &quot;dimension8&quot;: null}, &quot;gaid&quot;: &quot;UA-5831155-1&quot;}" type="hidden">
-
-    <script>
-      var dataLayer = [{"freeTrialEligibleUser": "False", "language": {"requested": "en", "served": "en"}, "projectName": "Android Things", "scriptsafe": null, "signedIn": "False", "internalUser": "False"}];
-    </script>
-
-  <a href="#top" id="skip-to-main">Skip to content</a>
-  <header id="header-wrapper">
-    <div class="dac-header" id="header">
-      <div class="dac-header-inner">
-        <a class="dac-nav-toggle" data-dac-toggle-nav="" href="" title="Open navigation">
-          <span class="dac-nav-hamburger">
-            <span class="dac-nav-hamburger-top"></span>
-            <span class="dac-nav-hamburger-mid"></span>
-            <span class="dac-nav-hamburger-bot"></span>
-          </span>
-        </a>
-
-<a class="dac-header-logo" href="/">
-  <img class="dac-header-logo-image" src="static/index/img/nutboard_logo.png" width="34" height="36">NutsBoard</a>
-<ul class="dac-header-tabs">
-  <li>
-    <a class="dac-header-tab" href="/products">Products</a>
-  </li>
-  <li>
-    <a class="dac-header-tab" href="#">Download</a>
-  </li>
-  <li>
-    <a class="dac-header-tab" href="#">Forum</a>
-  </li>
-  <li>
-    <a class="dac-header-tab" href="#">Blog</a>
-  </li>
+<tbody><tr>
+<td>
+</td>
+<td style="padding-left: 4%; padding-right: 4%; vertical-align:top; max-width:100%;"><b>Krogoth Release 01 - 4.1.15</b>
+<ul>
+<li><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6_Yocto_Krogoth" title="VAR-SOM-MX6 Yocto Krogoth"> Complete Developer Guide</a>
+</li>
 </ul>
-
-      </div><!--/.header-wrap.wrap-->
-    </div><!--/.header-->
-
- 
-
-<div id="search-results" class="dac-search-results">
-  <div id="dac-search-results-history" class="dac-search-results-history">
-    <div class="wrap dac-search-results-history-wrap dac-hidden">
-      <div class="cols">
-        <div class="col-1of2 col-tablet-1of2 col-mobile-1of1">
-          <h2 style="padding-bottom: 0px;">Most visited</h2><hr>
-          <div class="resource-flow-layout" data-history-query="history:most/visited" data-maxresults="3" data-cardsizes="18x2"></div>
-        </div>
-
-        <div class="col-1of2 col-tablet-1of2 col-mobile-1of1">
-          <h2 style="padding-bottom: 0px;">Recently visited</h2><hr>
-          <div class="resource-flow-layout cols" data-history-query="history:recent" data-allow-duplicates="true" data-maxresults="3" data-cardsizes="18x2"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="dac-search-results-content" class="dac-search-results-content">
-    <div class="dac-search-results-metadata wrap">
-      <div class="dac-search-results-for">
-        <h2 style="padding-bottom: 0px;">Results for <span id="search-results-for"></span></h2><hr>
-      </div>
-
-      <div id="dac-search-results-hero"></div>
-
-      <div class="dac-search-results-hero cols">
-        <div id="dac-search-results-reference" class="col-3of6 col-tablet-1of2 col-mobile-1of1">
-          <div class="suggest-card reference no-display">
-            <ul class="dac-search-results-reference">
-            </ul>
-          </div>
-        </div>
-
-        <div id="dac-custom-search-results"></div>
-
-      </div>
-
-
-
-    </div>
-  </div>
-</div>
-
-  </header>
-
-  <a name="navigation" tabindex="0" class="nav-start-marker">navigation</a>
-  <nav class="dac-nav">
-    <div class="dac-nav-dimmer" data-dac-toggle-nav=""></div>
-    <div class="dac-nav-sidebar" data-swap="" data-dynamic="false" data-transition-speed="300" data-dac-nav="">
-      <div data-swap-container="">
-
-
-
-<ul id="dac-main-navigation" class="dac-nav-list dac-swap-section dac-left dac-active">
-  <li class="dac-nav-item">
-    <a class="dac-nav-back-button back-to-dev" tabindex="0" href="https://developer.android.com/develop/index.html">
-      <i class="dac-sprite dac-nav-back"></i>Menu
-    </a>
-  </li>
-  <li class="dac-nav-item preview">
-    <a class="dac-nav-link" href="/products">Products</a>
-  </li>
-  <li class="dac-nav-item hardware">
-    <a class="dac-nav-link" href="#">Download</a>
-  </li>
-  <li class="dac-nav-item sdk">
-    <a class="dac-nav-link" href="#">Forum</a>
-  </li>
-  <li class="dac-nav-item sdk">
-    <a class="dac-nav-link" href="#">Blog</a>
-  </li>
-
+<p><br>
+<b>Jethro Release 01 - 4.1.15</b>
+</p>
+<ul>
+<li><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6_Yocto_Jethro_New_R4" title="VAR-SOM-MX6 Yocto Jethro New R4"> Complete Developer Guide</a>
+</li>
 </ul>
+<p><br>
+<b>Fido Release 10.1 - 3.14.38</b>
+</p>
+<ul>
+<li><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6_Yocto_Fido_New_R3" title="VAR-SOM-MX6 Yocto Fido New R3"> Complete Developer Guide</a>
+</li>
+</ul>
+<p><br>
+<b>Legacy releases</b>
+</p>
+<ul>
+<li><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6_Yocto_Legacy" title="VAR-SOM-MX6 Yocto Legacy"> Legacy</a>
+</li>
+</ul>
+<p><br>
+<b>Development</b>
+</p>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://variscite.com/support-forum/index.php">Support forum</a>
+</li>
+<li><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6_Yocto_Recovery_SD_card_V70plus" title="VAR-SOM-MX6 Yocto Recovery SD card V70plus"><b>Recovery SD card</b></a>
+</li>
+</ul>
+</td></tr>
+<tr>
+<td>
+</td>
+<td style="padding:0px 10px 10px 0px; height:100px;"><div class="floatright"><a href="http://variwiki.com/index.php?title=File:Yocto.png" class="image"><img alt="Yocto.png" src="VAR-SOM-MX6%20-%20Variscite%20Wiki_files/100px-Yocto.png" srcset="/images/thumb/3/33/Yocto.png/150px-Yocto.png 1.5x, /images/thumb/3/33/Yocto.png/200px-Yocto.png 2x" width="100" height="100"></a></div>
+</td></tr></tbody></table>
 
+</div> 
+<div style="width:21%; float:left; padding:0px 2% 0px 0px; display:inline-block;">
+<table>
 
-      </div>
-    </div>
-  </nav>
+</table><table style="padding:10px; background-color: #a4c639; color: white; font-size:20px; width:100%; border-top-left-radius:5px; border-top-right-radius:5px;">
 
-  <a name="top" tabindex="0"></a>
+<tbody><tr>
+<td>Android
+</td></tr></tbody></table>
+<table style="background-color: #F2FAD9; width:100%; height:540px;">
 
-  <div id="body-content" style="padding-bottom: 41px;">
-  <div class="jd-descr" itemprop="articleBody">
+<tbody><tr>
+<td>
+</td>
+<td style="padding-left: 4%; padding-right: 4%; vertical-align:top; max-width:100%;"><b>Marshmallow 6.0.1_2.1.0<br>(kernel 4.1.15)</b>
+<ul>
+<li><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6_Android_M6.0.1_2.1.0" title="VAR-SOM-MX6 Android M6.0.1 2.1.0">Developers Guide</a>
+</li>
+<li><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6_Android_Unit_Testing_M6.0.1_1.0.0_R0" title="VAR-SOM-MX6 Android Unit Testing M6.0.1 1.0.0 R0">Unit Testing</a>
+</li>
+</ul>
+<p><br>
+<b>Marshmallow 6.0.1_1.0.0<br>(kernel 3.14.52)</b>
+</p>
+<ul>
+<li><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6_Android_M6.0.1_1.0.0_R0" title="VAR-SOM-MX6 Android M6.0.1 1.0.0 R0">Developers Guide</a>
+</li>
+<li><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6_Android_Unit_Testing_M6.0.1_1.0.0_R0" title="VAR-SOM-MX6 Android Unit Testing M6.0.1 1.0.0 R0">Unit Testing</a>
+</li>
+</ul>
+<p><br>
+<b>Lollipop 5.1.1</b>
+</p>
+<ul>
+<li><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6_Android_L5.1.1_2.1.0_R1" title="VAR-SOM-MX6 Android L5.1.1 2.1.0 R1">Developers Guide</a>
+</li>
+<li><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6_Android_Unit_Testing_LL_500_100" title="VAR-SOM-MX6 Android Unit Testing LL 500 100">Unit Testing</a>
+</li>
+</ul>
+<p><br>
+<b>Lollipop 5.0.0</b>
+</p>
+<ul>
+<li><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6_Android_LL1_R01" title="VAR-SOM-MX6 Android LL1 R01">Developers Guide</a>
+</li>
+<li><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6_Android_Unit_Testing_LL_500_100" title="VAR-SOM-MX6 Android Unit Testing LL 500 100">Unit Testing</a>
+</li>
+</ul>
+<p><br>
+</p>
+<ul>
+<li><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6_Yocto_Recovery_SD_card_V70plus" title="VAR-SOM-MX6 Yocto Recovery SD card V70plus"><b>Recovery SD card</b></a>
+</li>
+</ul>
+</td></tr>
+<tr>
+<td>
+</td>
+<td style="padding:0px 10px 10px 0px; height:100px;"><div class="floatright"><a href="http://variwiki.com/index.php?title=File:Android.png" class="image"><img alt="Android.png" src="VAR-SOM-MX6%20-%20Variscite%20Wiki_files/84px-Android.png" srcset="/images/thumb/c/ce/Android.png/126px-Android.png 1.5x, /images/thumb/c/ce/Android.png/168px-Android.png 2x" width="84" height="100"></a></div>
+</td></tr></tbody></table>
 
+</div>
+<div style="width:21%; float:left; padding:0px 2% 0px 0px; display:inline-block;">
+<table>
 
+</table><table style="padding:10px; background-color: #00bef5; color: white; font-size:20px; width:100%; border-top-left-radius:5px; border-top-right-radius:5px;">
 
+<tbody><tr>
+<td>Windows
+</td></tr></tbody></table>
+<table style="background-color: #E0F7FD; width:100%; height:540px;">
 
-<h2 id="where_to_buy" style="padding-bottom: 0px;">SoM</h2><hr>
-<p>You can purchase supported developer kits and associated peripherals from the
-following distributors:</p>
-<div class="col-8">
-  <h3>Almond</h3>
-  <hr>
-  <img src="static/products/img/almond.png" height="160px">
-  <p>
-    The Almond SoM is a modular, small and powerful TI AM335X system on
-    a chip (SoC) that includes a CPU, DDR3 memory, storage and Wi-Fi
-    and Bluetooth. The module can be mounted onto a system of Carrier Board with
-    DDR3-203 SODIMM pin design, enabling quick adoption and prototyping for the 
-    consumer and industrial IoT applications.
-  </p>
-  <p>
-    <a href="https://software.intel.com/en-us/iot/android-things" target="_blank">Learn More</a><br>
-    <a href="https://developer.android.com/things/hardware/edison.html">Get Started with Almond</a><br>
-  </p>
+<tbody><tr>
+<td>
+</td>
+<td style="padding-left: 4%; padding-right: 4%; vertical-align:top; max-width:100%;"><b>WEC2013 is provided and supported by Variscite's partner Marco Contenti. <br>For more details:</b><br>
+<p><a rel="nofollow" class="external text" href="http://www.projectsas.it/index.php?page=var-som-bsp">VAR-SOM-MX6 WEC2013 Support</a>
+</p>
+</td></tr>
+<tr>
+<td>
+</td>
+<td style="padding:0px 10px 10px 0px; height:100px;"><div class="floatright"><a href="http://variwiki.com/index.php?title=File:Windows.png" class="image"><img alt="Windows.png" src="VAR-SOM-MX6%20-%20Variscite%20Wiki_files/91px-Windows.png" srcset="/images/thumb/b/ba/Windows.png/137px-Windows.png 1.5x, /images/b/ba/Windows.png 2x" width="91" height="100"></a></div>
+</td></tr></tbody></table>
+
+</div> 
+<div style="width:21%; float:left; padding:0px 2% 0px 0px; display:inline-block;">
+<table>
+
+</table><table style="padding:10px; background-color: #d70751; color: white; font-size:20px; width:100%; border-top-left-radius:5px; border-top-right-radius:5px;">
+
+<tbody><tr>
+<td>Debian
+</td></tr></tbody></table>
+<table style="background-color: #f1d8e1; width:100%; height:540px;">
+
+<tbody><tr>
+<td>
+</td>
+<td style="padding-left: 4%; padding-right: 4%; vertical-align:top; max-width:100%;"><b>Jessie Release 1 - 4.1.15</b>
+<ul>
+<li><a href="http://variwiki.com/index.php?title=VAR-SOM-MX6_Debian_R1" title="VAR-SOM-MX6 Debian R1"> Complete Developer Guide</a>
+</li>
+</ul>
+<p><b>Development</b>
+</p>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://variscite.com/support-forum/index.php">Support forum</a>
+</li>
+</ul>
+</td></tr>
+<tr>
+<td>
+</td>
+<td style="padding:0px 10px 10px 0px; height:100px;"><div class="floatright"><a href="http://variwiki.com/index.php?title=File:Debian.png" class="image"><img alt="Debian.png" src="VAR-SOM-MX6%20-%20Variscite%20Wiki_files/80px-Debian.png" srcset="/images/thumb/3/30/Debian.png/120px-Debian.png 1.5x, /images/thumb/3/30/Debian.png/160px-Debian.png 2x" width="80" height="100"></a></div>
+</td></tr></tbody></table>
+
+</div>
+</div>
+<div style="width:30%; float:left; display:inline-block;">
+<table style="padding:10px; background-color: #0055a5; color: white; width:100%; font-size:20px; border-top-left-radius:5px; border-top-right-radius:5px;">
+<tbody><tr>
+<td>Specifications
+</td></tr></tbody></table>
+<table class="wikitable">
+<tbody><tr><td><b>CPU</b></td><td>Freescale i.MX6, Cortex™-A9 MPCore™, 800Mhz-1200 MHz, 1/2/4 cores<br></td></tr>
+<tr><td><b>Memory</b></td><td>256MB - 2048MB DDR3</td></tr>
+<tr><td><b>GFU</b></td><td>Vivante™ GC2000 Accelerated 2D and 3D</td></tr>
+<tr><td><b>Display</b></td><td>HDMI v1.4 1080p, 2x LVDS</td></tr>
+<tr><td><b>Storage</b></td><td>SD-Card, SATA II interface, 512MB SLC NAND, eMMC up to 64GB</td></tr>
+<tr><td><b>Network</b></td><td>WiLink8 802.11 a/b/g/n + MIMO, Ethernet: 10/100/1000 Mbps</td></tr>
+<tr><td><b>RTC</b></td><td>On carrier</td></tr>
+<tr><td><b>I2C</b></td><td>x2</td></tr>
+<tr><td><b>SPI</b></td><td>x2</td></tr>
+<tr><td><b>One-Wire</b></td><td>1 Wire/HDQ</td></tr>
+<tr><td><b>UARTs</b></td><td>x3, up to 3.6 Mbps</td></tr>
+<tr><td><b>USB</b></td><td>USB 2.0: 1x Host, 1x OTG</td></tr>
+<tr><td><b>Audio</b></td><td>Headphone, Digital Microphone, S/PDIF, Line In/Out</td></tr>
+<tr><td><b>Temperature Range</b></td><td>-40 to 85°C</td></tr>
+<tr><td><b>Dimensions</b></td><td>51.5 mm x 67.8 mm x 4.5 mm</td></tr>
+</tbody></table>
+</div>
 </div>
 
+<!-- Tidy found serious XHTML errors -->
 
-<h2 id="where_to_buy" style="padding-bottom: 0px;">Carrier Board</h2><hr>
-<p>You can purchase supported developer kits and associated peripherals from the
-following distributors:</p>
-<div class="col-8">
-  <h3>Walnut</h3>
-  <hr>
-  <img src="static/products/img/walnut.png" height="160px">
-  <p>
-    The Walnut is a 36x40mm, high performance Carrier Board that is highly optimized
-    for Internet of Things applications. It is pin-compatible with the all NutsBoard
-    SoMs. It's including WAN, LAN, UART, CAN bus, USB and 6 GPIO's for Industrial control.
-  </p>
-  <p>
-    <a href="https://software.intel.com/en-us/iot/android-things" target="_blank">Learn More</a><br>
-    <a href="https://developer.android.com/things/hardware/edison.html">Get Started with Walnut</a><br>
-  </p>
-</div>
+<!-- 
+NewPP limit report
+CPU time usage: 0.105 seconds
+Real time usage: 0.136 seconds
+Preprocessor visited node count: 296/1000000
+Preprocessor generated node count: 1129/1000000
+Post‐expand include size: 11363/2097152 bytes
+Template argument size: 7049/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+-->
 
-<h2 id="where_to_buy" style="padding-bottom: 0px;">Accessories</h2><hr>
-<p>You can purchase supported developer kits and associated peripherals from the
-following distributors:</p>
-<div class="col-8">
-  <h3>Plastic Case</h3>
-  <hr>
-  <img src="#" height="160px">
-  <p>
-    The Walnut is a 36x40mm, high performance Carrier Board that is highly optimized
-    for Internet of Things applications. It is pin-compatible with the all NutsBoard
-    SoMs. It's including WAN, LAN, UART, CAN bus, USB and 6 GPIO's for Industrial control.
-  </p>
-  <p>
-    <a href="https://software.intel.com/en-us/iot/android-things" target="_blank">Learn More</a><br>
-    <a href="https://developer.android.com/things/hardware/edison.html">Get Started with Walnut</a><br>
-  </p>
-</div>
-
-<h2 id="where_to_buy" style="padding-bottom: 0px;">Where to buy</h2><hr>
-<p>You can purchase supported developer kits and associated peripherals from the
-following distributors:</p>
-<div class="cols">
-  <div style="text-align:center;" class="col-3-wide">
-    <a href="https://www.adafruit.com/category/930">
-        <img src="Developer%20Kits%20%7C%20Android%20Things_files/adafruit-logo.png" class="img-logo" width="160">
-    </a>
-  </div>
-  <div style="text-align:center;" class="col-3-wide">
-    <a href="http://pimoroni.com/androidthings">
-        <img src="Developer%20Kits%20%7C%20Android%20Things_files/pimoroni-logo.jpg" class="img-logo" width="160">
-    </a>
-  </div>
-    <div style="text-align:center;" class="col-3-wide">
-    <a href="https://www.sparkfun.com/androidthings">
-        <img src="Developer%20Kits%20%7C%20Android%20Things_files/sparkfun-logo.jpg" class="img-logo" width="160">
-    </a>
-  </div>
-</div>
-
-
-
-</body></html>
+<!-- Saved in parser cache with key NewVarisciteWiki:pcache:idhash:49-0!*!0!*!*!2!* and timestamp 20161212033847
+ -->
+</div><div class="printfooter">
+Retrieved from "<a href="http://variwiki.com/index.php?title=VAR-SOM-MX6&amp;oldid=7017">http://variwiki.com/index.php?title=VAR-SOM-MX6&amp;oldid=7017</a>"</div>
+					<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://variwiki.com/index.php?title=Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://variwiki.com/index.php?title=Category:VAR-SOM-MX6" title="Category:VAR-SOM-MX6">VAR-SOM-MX6</a></li></ul></div></div>					<!-- end content -->
+									</div>
+			</div><!-- end of MAINCONTENT div -->	
+		</div>
+	</div><!-- end of MBODY div -->
+	<div class="visualClear"></div>
+	<div id="footer">
+		<table>
+			<tbody><tr>
+				<td rowspan="2" class="f-iconsection">
+						</td>
+				<td align="center">
+			<ul id="f-list">
+					<li id="f-lastmod"> This page was last modified on 30 November 2016, at 08:35.</li>
+					<li id="f-viewcount">This page has been accessed 64,003 times.</li>
+					<li id="f-privacy"><a href="http://variwiki.com/index.php?title=Variscite_Wiki:Privacy_policy" title="Variscite Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="f-about"><a href="http://variwiki.com/index.php?title=Variscite_Wiki:About" title="Variscite Wiki:About">About Variscite Wiki</a></li>
+					<li id="f-disclaimer"><a href="http://variwiki.com/index.php?title=Variscite_Wiki:General_disclaimer" title="Variscite Wiki:General disclaimer">Disclaimers</a></li>
+</ul></td>
+				<td rowspan="2" class="f-iconsection">
+												<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="VAR-SOM-MX6%20-%20Variscite%20Wiki_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a></div>
+					 
+				</td>
+			</tr>
+			<tr>
+				<td><div id="skin-info">
+					Mozilla Cavendish Theme based on Cavendish style by Gabriel Wicke modified by <a href="http://www.dasch-tour.de/" title="DaSch-Tour Blog" target="_blank">DaSch</a> for the <a href="http://www.wecowi.de/" title="Web Community Wiki">Web Community Wiki</a><br>
+					<a href="https://github.com/DaSchTour/Cavendish" title="github projectpage">github Projectpage</a> – <a href="https://github.com/DaSchTour/Cavendish/issues" title="Bug reporting at github">Report Bug</a> – Skin-Version: 2.3.4				</div></td>
+			</tr>
+		</tbody></table>
+	</div><!-- end of the FOOTER div -->
+<!-- end of the CONTAINER div -->
+<!-- scripts and debugging information -->
+<script>/*<![CDATA[*/window.jQuery && jQuery.ready();/*]]>*/</script><script>if(window.mw){
+mw.loader.state({"site":"loading","user":"ready","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"],null,true);
+}</script>
+<script>if(window.mw){
+mw.loader.state({"site":"ready"});
+}</script>
+<!-- Served in 0.166 secs. --><div style="display: none; font-size: 11.3333px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
