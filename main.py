@@ -16,6 +16,10 @@ def products():
 def download():
     return render_template('download.html')
 
+@app.route("/walnut")
+def walnut():
+    return render_template('walnut.html')
+
 @app.route("/overview")
 def overview():
     return render_template('overview.html')
