@@ -6,13 +6,10 @@
           NutsBoard: The Open Source of the industrial boards
       </title>
   <meta http-equiv="x-ua-Compatible" content="ie=edge">
-  <meta name="description" content="We design and develop responsive websites and progressive web apps.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#456BD9">
   <meta name="msapplication-config" content="/browserconfig.xml">
-  <link rel="pingback" href="https://cloudfour.com/xmlrpc.php">
 
-    <link rel="preload" as="font" href="https://cdn.cloudfour.com/wp-content/themes/cloudfour/static/toolkit/fonts/source-sans-pro-v9-latin_latin-ext-regular.woff2" type="font/woff2" crossorigin="anonymous">
 
   
 <style>/**
@@ -98,50 +95,10 @@
     url('/wp-content/themes/cloudfour/static/toolkit/fonts/source-code-pro-v6-latin-regular.woff') format('woff');
 }
 </style>      <meta name="onesignal" content="wordpress-plugin">
-          <link rel="manifest" href="https://cloudfour.com/manifest.json">
-          <script async="" src="static/products/analytics.js"></script><script src="static/products/OneSignalSDK.js" async=""></script>    <script>
+          <link rel="manifest" href="#">
+          <script async="" src="static/index/analytics.js"></script><script src="static/index/OneSignalSDK.js" async=""></script>
 
-      window.OneSignal = window.OneSignal || [];
-
-      OneSignal.push( function() {
-        OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.php";
-        OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
-        OneSignal.SERVICE_WORKER_PARAM = { scope: '/' };
-
-        OneSignal.setDefaultNotificationUrl("https://cloudfour.com");
-        var oneSignal_options = {};
-        window._oneSignalInitOptions = oneSignal_options;
-
-        oneSignal_options['wordpress'] = true;
-oneSignal_options['appId'] = 'bbf85d86-7b3d-4945-b568-b408f1e62d50';
-oneSignal_options['autoRegister'] = false;
-oneSignal_options['welcomeNotification'] = { };
-oneSignal_options['welcomeNotification']['title'] = "Cloud Four";
-oneSignal_options['welcomeNotification']['message'] = "";
-oneSignal_options['path'] = "https://cdn.cloudfour.com/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
-oneSignal_options['promptOptions'] = { };
-          <!-- OneSignal: Using custom SDK initialization. -->
-                });
-
-      function documentInitOneSignal() {
-        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
-
-        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
-          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
-      }
-
-      if (document.readyState === 'complete') {
-           documentInitOneSignal();
-      }
-      else {
-           window.addEventListener("load", function(event){
-               documentInitOneSignal();
-          });
-      }
-    </script>
-
-<link rel="stylesheet" id="toolkit-css" href="static/products/main.css" type="text/css" media="all">
-<link rel="https://api.w.org/" href="https://cloudfour.com/wp-json/">
+<link rel="stylesheet" id="toolkit-css" href="static/index/main.css" type="text/css" media="all">
 
 
 </head>
