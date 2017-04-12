@@ -8,21 +8,33 @@ app = Flask(__name__)
 def main():
     return render_template('index.html')
 
+@app.route("/approach")
+def approach():
+    return render_template('approach.html')
+
 @app.route("/products")
 def products():
     return render_template('products.html')
+
+@app.route("/almond")
+def walnut():
+    return render_template('almond.html')
 
 @app.route("/download")
 def download():
     return render_template('download.html')
 
-@app.route("/walnut")
-def walnut():
-    return render_template('walnut.html')
+@app.route("/almond_download")
+def almond_download():
+    return render_template('almond_download.html')
 
-@app.route("/overview")
-def overview():
-    return render_template('overview.html')
+@app.route("/community")
+def community():
+    return render_template('community.html')
+
+@app.route("/shop")
+def shop():
+    return render_template('shop.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True, threaded=True)

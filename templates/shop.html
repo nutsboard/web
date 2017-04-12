@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <title>
+          NutsBoard: The Open Source of the industrial boards
+      </title>
+  <meta http-equiv="x-ua-Compatible" content="ie=edge">
+  <meta name="description" content="We design and develop responsive websites and progressive web apps.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#456BD9">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <link rel="pingback" href="https://cloudfour.com/xmlrpc.php">
+
+    <link rel="preload" as="font" href="https://cdn.cloudfour.com/wp-content/themes/cloudfour/static/toolkit/fonts/source-sans-pro-v9-latin_latin-ext-regular.woff2" type="font/woff2" crossorigin="anonymous">
+
+  
+  <link rel="dns-prefetch" href="https://cdn.polyfill.io/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<style>/**
+ * Subset font -- this only contains characters for:
+ * ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890,. (and space)
+ *
+ * This will be used close to immediately until the following @font-face
+ * definitions download and fill in the missing characters.
+ */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-display: swap;
+  src:
+    local("Source Sans Pro"),
+    local("SourceSansPro-Regular"),
+    url(data:application/font-woff;base64,AAEAAAANAIAAAwBQR0RFRgASADYAABn8AAAAFkdQT1OcVZzwAAAaFAAACu5PUy8yWsx11gAAGMwAAABgY21hcAFpAZEAABksAAAAXGdhc3D//wADAAAZ9AAAAAhnbHlmdHkjqQAAANwAABXiaGVhZP4Us+IAABdoAAAANmhoZWEHowLxAAAYqAAAACRobXR4gg0NNwAAF6AAAAEGbG9jYaslpn4AABbgAAAAhm1heHAAUgDNAAAWwAAAACBuYW1lBHEMXwAAGYgAAABKcG9zdP+4ADIAABnUAAAAIAACAAMAAAIdApAACQARAAABJy4BJyMOAQ8BFyMHIxMzEyMBcR8SIBAEDyASH9rvP1XeXt5ZAQtkN205OW03ZEPIApD9cAAAAwBaAAACJAKQABMAHAAlAAATMzIeAhUUBgcVHgEVFA4CKwETMjY1NCYrARUTMjY1NCYrARVawzJTOyE4OkhQJEJcN9G0VUlNTWVyVV5cV3ICkBImPSsxTw8EC05EMEgwGAF4Ojc2L9b+yj9DPTn4AAEANP/0AhsCnAAhAAATND4CMzIWFwcuASMiDgIVFB4CMzI2NxcOASMiLgI0LE5rPzxaHS8aPyovTDYeHTRLLzBHIC8nYj8+aU0rAUhPflgvMSA1HCElRWI9PmNGJiYjMy0yLld/AAIAWgAAAjQCkAAKABMAABMzMhYVFA4CKwE3MjY1NCYrARFapJieKE5ySqiec3Nzc0sCkKidTntVLUSKfX2E/fgAAAEAWgAAAd4CkAALAAATIRUhFTMVIxUhFSFaAXr+2fn5ATH+fAKQRs5H7kcAAQBaAAAB1AKQAAkAABMhFSEVMxUjESNaAXr+2fr6UwKQRt5G/toAAAEANP/0AiYCnAAlAAATND4CMzIWFwcuASMiDgIVFB4CMzI2NzUjNTMRDgEjIi4CNC1RbkJEWx0vGUEyMlA4Hx03UTUjPxSL1yBpQkFsTiwBSE9+WC8zHjUaIyVFYj0+Y0YmFRKrRf7sISsuV38AAQBaAAACMgKQAAsAABMzESERMxEjESERI1pTATFUVP7PUwKQ/u0BE/1wATX+ywAAAQBaAAAArQKQAAMAABMzESNaU1MCkP1wAAABAB//9AGJApAAEAAANx4BMzI2NREzERQOAiMiJ1sWOCM1NFQVK0UwezqHJyNBSwHH/jEqSzggaQAAAQBaAAACPwKQAAwAABMzETMBMwcTIwMHFSNaUwMBEV7N7V3EcVMCkP63AUn6/moBVYXQAAEAWgAAAcwCkAAFAAATMxEhFSFaUwEf/o4CkP23RwAAAQBaAAACfQKQABkAABMzExczNxMzESMRNDY3IwcDIwMnIx4BFREjWmJ/MAQufmJPBwQENX4vfzQEAwhNApD+oIaGAWD9cAFpLGoskv6pAVeSLGos/pcAAAEAWgAAAi0CkAATAAATMxMXMy4BNREzESMDJyMeARURI1pW7UcEAwdPVu5HBAQHTwKQ/mSIMms0AVP9cAGdhzJnNP6pAAACADT/9AJlApwAEwAnAAAFIi4CNTQ+AjMyHgIVFA4CJzI+AjU0LgIjIg4CFRQeAgFMPmdKKSlKZz4+Z0spKUtnPixHMxwcM0csLEczHBwzRwwwWX9PT31XLi9XfU5Pf1kwSSZHYz49YkQlJURiPT5jRyYAAAIAWgAAAhUCkAAOABcAABMzMh4CFRQOAisBESMTMjY1NCYrARFayTZaPyMjQFk2dlO/VlNUVWwCkBQtSjY0TDIZ/vwBSEFGRzf++wACADT/XAJzApwAEwA0AAATFB4CMzI+AjU0LgIjIg4CAQ4BIyImJy4DNTQ+AjMyHgIVFA4CBx4BMzI2N4ocM0csLEczHBwzRywsRzMcAekPMh1beh02WD8iKUpnPj5nSykhPVY0F1Q2FiEOAUs/ZUgmJkhlPz1iRCUlRGL94wUKV0QHNlh3SE99Vy4vV31OR3VXNwksKgYEAAIAWgAAAiACkAAIABgAABMzMjY1NCYrAQEDIxEjETMyHgIVFAYHE61uTVJSTW4BFZ53U80yVT0iUEOmAVk/QEE0/bMBFf7rApATLEYzTVwR/uIAAAEAKv/0Ae8CnAAzAAA3HgEzMjY1NC4CLwEuAzU0PgIzMhYXBy4BIyIGFRQeAh8BHgMVFA4CIyImJ1wjXzNBSBEdKBdeFzAmGB83Sy07ZCMtHkkuN0MTICYUXRwyJBUfOlI0RXYrjyUtOzAZIxkUCykKHCg3JCVALxotJDYdITMtGCEZEwgoDB8pNyQnRDMdNC0AAQAcAAAB/AKQAAcAABMjNSEVIxEj4sYB4MZUAkpGRv22AAEAV//0Ai4CkAAZAAATMxEUHgIzMj4CNREzERQOAiMiLgI1V1MYKTggITgqGFAkP1YyMlc/JAKQ/n07UDAVFTBQOwGD/n9PbEMdHUNsTwAAAQAAAAACAwKQAA0AABEzEx4BFzM+ATcTMwMjWWkSGxMEEhwRaVXQYQKQ/p47ZDo6ZDsBYv1wAAABABcAAAL6ApAAIQAAEzMTHgEXMz4BNxMzEx4BFzM+ATcTMwMjAy4BJyMOAQcDIxdWRQkUCQQLGAtbTFsMGAwECRIKRVCIZGMJDwgECBEIYWMCkP6bNmg2Nmk1AWX+mzRqNjZpNQFl/XABiyZJJiZJJv51AAEADwAAAfICkAAZAAATAzMXHgEXMz4BPwEzAxMjJy4BJyMOAQ8BI86yXFkNFw8EDhUMV1izv1xgDRsQBA4aDF9YAVMBPagXKx0dKxeo/r/+sbEYMx4eMxixAAH//wAAAd0CkAAPAAA3AzMXHgEXMz4BPwEzAxUjxMVZVRAeEQQRIg9UV8VU/gGSuSRGJSVGJLn+bv4AAAEALQAAAfECkAAJAAA3ASE1IRUBIRUhLQFZ/sYBov6mAV3+PDICGEYx/ehHAAACADr/9AG3AfIAGwAnAAA3NDY3NC4CIyIGByc+ATMyFhURIycjDgEjIiY3FBYzMjY3NQ4DOo+cCRcmHitJHSEiYjtZUEQHAiNRLT5RUTEkIz8jPVQzFn5QVREXLCIVIBQ5FiltW/7WOh0pSEgqJCEghwgWHicAAgBS//QB+wLIABYAJgAAEzMVBz4BMzIeAhUUDgIjIiYnIwcjNx4BMzI+AjU0LgIjIgdSUgIhTikvSDEZIjpMKiJJIAMHQlIgPxgeMyUVDh8xIjtHAsjCWB0nI0FbOD5iRCMfHTBsHBcbMUgtKEIvGkIAAQAu//QBsAHyACEAADc0PgIzMhYXBy4BIyIOAhUUHgIzMjY3Fw4BIyIuAi4mQFUvMEUZKRYvHSE4KBcWJzghIzkWJSFRLDBUPSPyPV9CIiMXNRMYGzJFKipEMRsdFDYdIiJBXwAAAgAv//QB2QLIABQAIwAANzQ+AjMyFhcnNTMRIycjDgEjIiY3FBYzMjY3NS4BIyIOAi8jOkwqKj4gBFNEBwMdSytcbVVGQCI8Hh85Hh0zJhbyO19CJB4aU7v9ODkcKYR7WGIhIv4cFxsxRAAAAgAu//QBygHyABsAJAAANzQ+AjMyHgIVFAchHgEzMjY3Fw4BIyIuAiU0JiMiDgIHLiU9TiouSTEaA/64BVdGIzsbHSBOMjFVPyQBVD85Gi8mGQTyPF9CIyA8VDQbEk9cFRE2FB4jQV5hS08VJzklAAEAHgAAAT8C1AAVAAABJiMiHQEzFSMRIxEjNTc1NDYzMhYXAS0bHERnZ1JCQkVJFykRAoUMXk1D/l0Boz4FTUtWCQcAAwAt/yAB7AHyABEASQBZAAAXFBYzMj4CNTQmKwEiJicOAQc0Njc1LgE1NDY3NS4BNTQ+AjMyFhczFSMeARUUDgIjIiYnDgEVFBY7ATIWFRQOAiMiLgITMj4CNTQmIyIGFRQeAnVLQiM5KBYyMFQOIRAaGEgmIRIZIhMYJx0yQyUUIw6pZBEXHDBBJRImEQ0SJDJeVVUiQFs5LUo1HckVJR0QPCsrPBAdJVInLhEbJBMiGgMFEyogHzgXBAsnHR8uDQQUQywoQC0YBwU/ETQfJz8rGAkICxsUFx43PSI9LhsRIjABThAeKxs2Ozs2GyseEAABAFIAAAHXAsgAFAAAEzMVBz4BMzIWFREjETQmIyIGBxEjUlIDI0wzTUdSLDAmOiVSAsjCZCEvYF7+zAEpRT0mJf6gAAIAQwAAALUCtAALAA8AABMiJjU0NjMyFhUUBgczESN8GCEhGBghIUJSUgJKHhcYHR0YFx5k/hoAAv/Y/ycAtQK0AA8AGwAAEzMRFAYjIiYnNx4BMzI2NRMiJjU0NjMyFhUUBlNSPEkXJA0RCRgNJBgqGCEhGBchIQHm/eNKWAgFPgMFMi0CgR4XGB0dGBceAAEAUgAAAeYCyAAMAAATMxEzEzMHEyMnBxUjUlEDz1ujuVqOW1ECyP4eAQDD/t3qaoAAAQBS//QA2ALIAA8AABMzERQWMzoBNxcOASMiJjVSUg4JBAcHCwgWES8oAsj9lBQQAj4EBDg2AAABAFIAAALxAfIAIQAAEzMXMz4BMzIWFz4BMzIWFREjETQmIyIHESMRNCYjIgcRI1JEBwMgSyw4Pw8mTS1LSVIsLjdDUiwvN0NSAeZGIy8xLCozYF7+zAEpRT1L/qABKUU9S/6gAAABAFIAAAHXAfIAFAAAEzMXMz4BMzIWFREjETQmIyIGBxEjUkQHAyNNM01HUiwwJjolUgHmRiMvYF7+zAEpRT0mJf6gAAIALv/0AfAB8gATACcAADc0PgIzMh4CFRQOAiMiLgI3FB4CMzI+AjU0LgIjIg4CLiU+US0tUT4lJT5RLS1RPiVVFCU0Hx80JRQUJTQfHzQlFPI9X0IiIkJfPTxfQSIiQV88KkQxGxsxRCoqRTIbGzJFAAIAUv8zAfsB8gAWACcAABcVIxEzFzM+ATMyHgIVFA4CIyImJzceATMyPgI1NC4CIyIGB6RSRAcDIU8rL0gwGSI6TCoiQyICIT4YHjMlFQ4fMSIfPyQppAKzOBwoI0FbOT5hRCMeGkAcFxsxSC0oQi8aIiAAAgAv/zMB2QHyABQAIwAANzQ+AjMyFhczNzMRIzU3DgEjIiY3FBYzMjY3NS4BIyIOAi8jOkwqKkAhAghCUwQdSypcbVVGQCI8Hh85Hh0zJhbyO19CJB0dLv1NrVYbJ4R7WGIhIv4cFxsxRAAAAQBSAAABXgHyABEAABMzFzM+ATMyFwcuASMiBgcRI1JEBwMZRyodFxAMFA8fQxlSAeZYLjYKSAQEMj7+yAABABz/9AGDAfIAMQAANx4BMzI2NTQuAicuAzU0PgIzMhYXBy4BIyIGFRQeAhceAxUUDgIjIiYnRSBDLDAwFB8oFBo0KRoXKz4nLk0cJxk2IC4rEh4nFRo1KhsXLUMrNF4jbhogLCATHBUQCAkXISwfHTMlFSAXNBMYKhwRGRMPCAoWITAiHjQoFyYdAAEAGP/0AUUCbgAZAAATIzU/ATMVMxUjERQWMzI2NxcOASMiLgI1YEhMCkWDgyEqDR4MEBQvFyc1IQ4Boz4FiIhD/vItMQgFPgcLGCo8JAAAAQBL//QBzgHmABQAABMzERQWMzI2NxEzESMnIw4BIyImNUtTKzAmOiNSRAcDIkszTkcB5v7XRT0nKwFZ/hpMKDBgXgABAAwAAAHHAeYADQAAEzMTHgEXMz4BNxMzAyMMVVwLFwsECxYLXFGsYAHm/uwkSCMjSCQBFP4aAAEAGAAAArYB5gAhAAATMxMeARczPgE3EzMTHgEXMz4BNxMzAyMDLgEnIw4BBwMjGFRICA4HBAgQCUtQTAkRCAQIDghHToJkRgkPCQQIEApEYAHm/ucjQiIiQyIBGf7nI0IiIkIjARn+GgEFI0QlJUUj/vwAAQAOAAABsAHmABkAADcnMxceARczPgE/ATMHFyMnLgEnIw4BDwEjrZNZQQsYDQQLFgs7VpOeWUcNGg4EDRgMQlb+6GsUKRQUKRRr8fVxFiwVFSsXcQABAAz/LwHHAeYAHQAAFx4BMzI2PwEDMxMeARczPgE3EzMDDgMjIiYnNzEIFAkqNQ8Lw1VjCxkLBAsUCldQtw0gLDglERwMEIYCBTstJAHn/vMgRyIhSCABDf3yJD4tGgUFQQAAAQAfAAABjwHmAAkAADcBIzUhFQEhFSEfAQDkAUz/AAEI/pAsAXdDLP6JQwACACz/9AHFAooACwAdAAAXIiY1NDYzMhYVFAYnMj4CNTQuAiMiDgIVFBb5YWxsYWBsbGAcLSESEiEtHBwuIRJFDKyhoaiooaGsQh9BZUZGZD8eHj9kRox/AAABAE8AAAG3An4ADAAANzMRIzU+ATczETMVIU+SdCxBGj+E/phEAdY1CBcQ/cZEAAABACQAAAHEAooAHQAANz4DNTQmIyIGByc+ATMyFhUUDgIHPgE7ARUhKEhwTCg8PShEHC8oWj9ZZidFXzkaOBm5/mQxSHRjUyc3Ri0gLyw1Z1UtW2FpOwIERwABABr/9AG+AooAMwAANx4BMzI2NTQuAiM1Mj4CNTQmIyIGByc+ATMyHgIVFAYHFR4DFRQOAiMiLgInRB1NOTpKFTBOOTNFKxI7MyhDHSwlWTkqRjMcQDQdMiYVITlMLCY/NCkQhB4uPzYcLyISPxIgLBkvNiQdNCMtFik8JzpKFAQHGyk2ISpELxkPGSASAAACABEAAAHVAn4ACQAUAAAlNTQ2NyMOAQ8BBSMVIzUhNQEzETMBMAMCBAwaDpUBbVdO/uEBEVxX8rkaRxoXLBfaQrCwNgGY/nQAAAEAGf/0AcECfgAmAAA3HgEzMj4CNTQmIyIGBycTIRUjBz4BMzIeAhUUDgIjIi4CJ0EcTTgdMyYWSj4hLx0sFQE/9xEXLh0pSDYfJDxNKiY/MykQgR0sFSY2IUJKFBMcATNHvQwOGDFLNDRQNx0PGB8RAAIAMP/0AckCigANAC4AACUyPgI1NCYjIgYHHgETLgEjIg4CBz4BMzIWFRQOAiMiLgI1ND4CMzIWFwEMGCgeETo8HkcgCEfAFDceITwuHAEeUCdTYx40RCcvUDsiKERXMDRLGzUUJTMgP0gnLV5hAd4XGxxAZ0wlK2JjLks2HiZNc01gh1UnJx0AAAEALAAAAccCfgAPAAAzPgM3ITUhFQ4DByOxBBgrQy/+wgGbOUcqEwRVWpaHfkJHM0iEiZldAAMAKf/0AcgCigAPAB0ARQAANxQeAjMyNjU0LgInDgE3PgE1NCYjIgYVFB4CBzQ+Ajc1LgE1ND4CMzIeAhUUDgIHFR4DFRQOAiMiLgJzFSUyHThFHDA/IiYztCAjOjUtOhgpNeEVISsXIzYcMEInKkIvGREZHw8VKB8THjZMLi1NNyCrGywhEj4yHywhGw4aRYUdQCMwQTgvHSkgGcQfNSshDAQZRzMlPCsYGS0/JRkuKCALBAwfJzIgJD4uGhovQAAAAgAo//QBwAKKAA0ALgAAEzI2Ny4BIyIOAhUUFgceATMyPgI3DgEjIiY1ND4CMzIeAhUUDgIjIiYn6x9HIAhIPRcpHhE6ThQ3HiI8LhwBHlAoU2IeM0UmL1E7IShEVzAzTRoBNicuXmAUJTQfP0jLFxwcQWhNJixiYy5LNh4mTXNNYIdVJyYdAAEAQf/0ALgAcgALAAA3NDYzMhYVFAYjIiZBIxkYIyMYGSMyHSMjHRsjIwAAAQAv/1YAxgByABEAABc+ATUGIyImNTQ2MzIWFRQGBy8qMAMHGCMkGSAlRj16Ez4pAR0cGx80LUFgGgAAAAABAAAAQgBaAAcAcQAFAAEAAAAAAAAAAAAAAAAAAwABAAAAAAAAACMAWwCOAK8AxQDZARABKAE1AVIBbAF8AagBywIFAisCdwKhAuoC+wMjAz8DeQOmA8QD2wQWBE8EggS4BPAFEgWLBa0FyQX1Bg4GKgZdBn8GuAbyBygHRweNB7UH1wfzCC0IWAiKCKAIzQjlCRIJWgl/CbgJ/QoYCnkKvQrTCvEAAAABAAAAAQzMZqj3Fl8PPPUACQPoAAAAAM2XgKUAAAAAzZfjFv9A/r0EiAO4AAAACQACAAAAAAAAAo0AWQDKAAACIAADAkwAWgI7ADQCZwBaAg8AWgHuAFoCaQA0AowAWgEHAFoB4AAfAkMAWgHmAFoC1wBaAocAWgKYADQCQABaApgANAJFAFoCFgAqAhgAHAKFAFcCAwAAAxIAFwIBAA8B3P//AhsALQIAADoCKwBSAcgALgIrAC8B8AAuASQAHgH4AC0CIABSAPYAQwD3/9gB7wBSAP8AUgM9AFICIwBSAh4ALgIrAFICJgAvAVsAUgGjABwBUgAYAiAASwHTAAwCzgAYAb4ADgHTAAwBqQAfAfEALAHxAE8B8QAkAfEAGgHxABEB8QAZAfEAMAHxACwB8QApAfEAKAD5AEEALwAAAAEAAAPY/u8AAASq/0D/FgSIAAEAAAAAAAAAAAAAAAAAAABBAAMBxwGQAAUAAAKKAlgAAABLAooCWAAAAV4AMgEgAAACCwUDAwQDAgIEAAAAAQAAAAAAAAAAAAAAAEFEQkUAQAAgAHoC7v8GAAAD2AERIAABkwAAAAAB4AKUAAAAIAADAAAAAgAAAAMAAAAUAAMAAQAAABQABABIAAAADgAIAAIABgAgACwALgA5AFoAev//AAAAIAAsAC4AMABBAGH////hABUAEgAG/8H/uwABAAAAAAAAAAAAAAAAAAAAAAACAB4AAwABBAkAAQAeAAAAAwABBAkAAgAOAB4AUwBvAHUAcgBjAGUAIABTAGEAbgBzACAAUAByAG8AUgBlAGcAdQBsAGEAcgAAAAMAAAAAAAD/tQAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//8AAgABAAAADAAAAAAAAAACAAEAAgA1AAEAAAABAAAACgAwAEQAAkRGTFQADmxhdG4AGgAEAAAAAP//AAEAAAAEAAAAAP//AAEAAQACa2VybgAOa2VybgAOAAAAAQAAAAEABAACAAAAAgAKAHAAAQAWAAQAAAAGACYAOABCAEwAVgBcAAEABgAHABEAFwAZADEAMwAEABcABAAZ/+gAMf/sADP/5gACABn/6AAz//IAAgAx//cAM//xAAIAMf/wADP/9gABABf//AACABf/+QAZ//YAAgkIAAQAAAkqCbAAKQAcAAD/q//j/+f/twAhAEn/+gANAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/Y//EAAP/yAAAAAP/8//IAAAAAAAD/+P/2AAD/9gAAAAAAAP/y//r/8gAE//IAAAAAAAAAAAAA/+gAAP/8//IAAAAA//b/8gAAAAD/8v/8AAAAAAAAAAD/8AAA//YAAP/6//z/8v/2AAAAAAAAAAD/7v/y//z/+f/sAAD/9v/yAAAAAP/o//b/4wAAAAAAAP/2AAD/8v/2//z//P/yAAAAAAAAAAAAAP/sAAD//AAAAAAAAAAAAAAAAP/8AAAAAAAAAAAAAAAAAAAAAAAAAAD/8gAAAAAAAAAAAAAAAAAA//D/8v/2//AAAP/2//D/7AAA//b/8gAA/+oAAAAA//kAAAAA/+b/8v/0AAD/7P/wAAAAAP/yAAD/iP/j/8j/tP/8AAD/3v/cAAAAA//qAAD/5gAA//L/9AAAAAD/7P/2/7QAAP/cAAAAAAAAAAAAAP/sAAD/+v/sAAAAAAAAAAAAAP/2AAD/7AAAAAAAAAAA/9gAAAAAAAD/9v/vAAAAAAAAAAD/+QAA/+wAAAAA//L/9gAAAAAAAAAA//b/8v/2AAD/9gAA//b/7gAAAAAAAP/y//YAAP/yAAAAAP/yAAD/7AAAAAD/+QAAAAAAAAAAAAAAAP/yAAAAAAAAAAAAAP/yAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/y/7cAAP/e/9//lv/Y/9n/yv/o/7f/7v++/4IAAP/u/9IAAP/s/9//2f/S/8X/tQAAAAAAAAAA//L/9gAAAAAAAP/w/+7/9gAAAAD//AAAAAD/0QAAAAAAAP/2//YAAP/5AAD//AAAAAAAAAAAAAAAAP/zAAAAAAAA/94AAP/6//r/+v/wAAAAAP+/AAAAAAAAAAAAAAAAAAAAAAAA//YAAP/y//YAAAAA/8QAAP/o//L/pf/y//D/5v/y/70AAP/X/5wAAP/y/94AAAAA//L/3v/Y/9f/0QAAAAD/9v/6//L/8gAA//D/8AAA//r/4v/2/+z/8P/s/+v/3wAA//L/6f/6AAD/8AAAAAAAAAAAAAD/6AAA//z/6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//AAAAAAAAAAAAAAAAAAAP/sAAAAAP/o//YAAAAGAAYAAAAAAAAAAAAA//YAAP/rAAAAAAAAAAD/8gAAAAYACAAAAAAAAAAA/5b/7P/e/6QAAAAa/+r/7AAAAAAAAAAAAAAAAAAA//gAAAAA/+QAAP+4AAD/3QAAAAAAAAAAAAD/6AAA//b/5v/2AAAABQAFAAAAAP/sAAAAAP/yAAAAAP/sAAD/8gAA//AAAAAF//kAAAAAAAQAAAAuAAAALgAu//L/9gAAAAD/zgAAAAAAAAAA/+wAAP/2AAAAAAAA//EANgAhAA3//AAA//z/8gAA/+YAAAAA//IAAAAl//z//AAAAAAAAAAAAAD/8AAA//IAAAAAAAAAAAAAAAD//AAAAAAAAP/yAAD/6gAAAAD/9f/2//YAAAAAAA4AAAAAAAAAAP/2AAD/7gAAAAD/8v/yAAAAAAAA//wAAAAA//kAAP/oAAAAAP/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/9gAAAAAAAAAAAAAAAAAA/8cAAAAA/9IAAAAA//z//P/2AAAAAAAAAAD/8gAAAAAAAAAAAAAAAP/t//z//P/vAAAAAP/6AAAAAAAAAAAAAP/2//oADQAT/8f/7QAA//YAAP/nAAD/9v/JAAAAAAAAAAAAAAATAAAAAP/2//YAAP/oAAAAAP/sAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/9gAAAAAAAAAAAAAAAAAA//IAAAAA//z/9gAAAAAAAAAOAAAAAAAAAAD/7gAA//YAAAAAAAD/+gAAAAAAAAAAAAAAAAAAAAD/7AAAAAD/4gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//IAAAAAAAAAAAAAAAAAAP/oAAAAAP/1AAD/9gAAAAD/1//8AAAAAAAA//YAAP/8/+IAAAAAAAD//P/yAAAAAAAAAAD/7wAA/+wAAAAA//kAAP/2AAAAAP/dAAAAAAAAAAD/7AAA//z/2AAAAAAAAP/8//wAAAAAAAAAAP/oAAD/5gAAAAD//P/6AAAAAP/8AAAAAAAAAAAAAP/pAAD/9gAAAAAAAP/2AAAAAP/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAD/6AAA//D/8P+4/9v/7P/i//b/3gAA//L/dgAA//b/8AAAAAAAAAAA/+z/7P/iAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/oAAAAAAAAAAAAAAAAAAD/2QAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/6AAAAAD/9v/iAAAAAAAA/5D/zv/2/7IAAP/VAAD/6P9uAAAAAAAAAAAAAAAAAAAAAP/2/+wAAAAA//YAAAAA/+sAAP/3//f/v//y//D/7f/2/+oAAP/x/7f//QAA/+IAAAAAAAAAAP/s//T/5wAA/+z/9gAAAAAAAAAA//L/8AAAAAP/8gAA/+//9v/w//n/+wAA//D/9gAAAAAAAAAAAAAAAP/yAAD/7AAAAAD/+QAA//YAAAAA/93/9QAA//wAAP/sAAD//P/YAAAAAAAAAAAAAAAAAAAAAAAA/+gAAP/fAAAAAP/xAAAAAAAA//IAAAAA//wAAP/2//YAAP/vAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAUAAgAeAAAAIAAjAB0AJgAmACEAKAA1ACIAQABBADAAAQACAEAAAQACAAMABwAfACAABAAhACIAIwAFAAYAIQAhAAcAJAAHAAgACQAKAAsAJQAMACYADQAOAA8AFwAQAAAAEgATABQAFgAAAAAAFQAAABYAFgAXABcAGwAYABkAGgAbACcAHAAoAB0AHgAAAAAAAAAAAAAAAAAAAAAAAAAAABEAEQABAAIAQAAKAAAADQAAAAAAAAANAAAAAAARAAAAAAAAAAAADQAAAA0AAAALAAEAAgAVAAMAFgAEAAwADgAAABAAEAAQAA8ABQAAABIABgAAAAAAGQAZABAAGQAQABkAGgATABQAFwAHABgACAAbAAAAAAAAAAAAAAAAAAAAAAAAAAAACQAJAAA=) format("woff");
+}
+
+/**
+ * Regular font -- contains latin and extended latin characters.
+ */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-display: swap;
+  src:
+    local("Source Sans Pro"),
+    local("SourceSansPro-Regular"),
+    url("/wp-content/themes/cloudfour/static/toolkit/fonts/source-sans-pro-v9-latin_latin-ext-regular.woff2") format("woff2"),
+    url("/wp-content/themes/cloudfour/static/toolkit/fonts/source-sans-pro-v9-latin_latin-ext-regular.woff") format("woff");
+}
+
+/**
+ * Italic font -- contains latin characters.
+ */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-display: swap;
+  src:
+    local("Source Sans Pro Italic"),
+    local("SourceSansPro-It"),
+    url("/wp-content/themes/cloudfour/static/toolkit/fonts/source-sans-pro-v9-latin_latin-ext-italic.woff2") format("woff2"),
+    url("/wp-content/themes/cloudfour/static/toolkit/fonts/source-sans-pro-v9-latin_latin-ext-italic.woff") format("woff");
+}
+
+/**
+ * Semibold font -- contains subset characters only.
+ */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-weight: 600;
+  font-display: swap;
+  src:
+    local("Source Sans Pro Semibold"),
+    local("SourceSansPro-Semibold"),
+    url("/wp-content/themes/cloudfour/static/toolkit/fonts/source-sans-pro-v9-subset-600.woff") format("woff");
+}
+
+/**
+ * Bold font -- contains latin characters.
+ */
+@font-face {
+  font-family: "Source Sans Pro";
+  font-weight: 700;
+  font-display: swap;
+  src:
+    local("Source Sans Pro Bold"),
+    local("SourceSansPro-Bold"),
+    url("/wp-content/themes/cloudfour/static/toolkit/fonts/source-sans-pro-v9-latin-700.woff2") format("woff2"),
+    url("/wp-content/themes/cloudfour/static/toolkit/fonts/source-sans-pro-v9-latin-700.woff") format("woff");
+}
+
+/**
+ * Monospace font -- contains latin characters.
+ */
+@font-face {
+  font-family: 'Source Code Pro';
+  font-display: swap;
+  src:
+    local('Source Code Pro'),
+    local('SourceCodePro-Regular'),
+    url('/wp-content/themes/cloudfour/static/toolkit/fonts/source-code-pro-v6-latin-regular.woff2') format('woff2'),
+    url('/wp-content/themes/cloudfour/static/toolkit/fonts/source-code-pro-v6-latin-regular.woff') format('woff');
+}
+</style>      <meta name="onesignal" content="wordpress-plugin">
+          <link rel="manifest" href="https://cloudfour.com/manifest.json">
+          <script async="" src="static/community/analytics.js"></script><script src="static/community/OneSignalSDK.js" async=""></script>    <script>
+
+      window.OneSignal = window.OneSignal || [];
+
+      OneSignal.push( function() {
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.php";
+        OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
+        OneSignal.SERVICE_WORKER_PARAM = { scope: '/' };
+
+        OneSignal.setDefaultNotificationUrl("https://cloudfour.com");
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = 'bbf85d86-7b3d-4945-b568-b408f1e62d50';
+oneSignal_options['autoRegister'] = false;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['title'] = "Cloud Four";
+oneSignal_options['welcomeNotification']['message'] = "";
+oneSignal_options['path'] = "https://cdn.cloudfour.com/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
+oneSignal_options['promptOptions'] = { };
+          <!-- OneSignal: Using custom SDK initialization. -->
+                });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+
+<link rel="stylesheet" id="toolkit-css" href="static/community/main.css" type="text/css" media="all">
+<link rel="https://api.w.org/" href="https://cloudfour.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cloudfour.com/xmlrpc.php?rsd">
+<link rel="canonical" href="https://cloudfour.com/made/">
+<link rel="shortlink" href="https://cloudfour.com/?p=4265">
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Our Work">
+<meta property="og:url" content="https://cloudfour.com/made/">
+<meta property="og:description" content="We design and develop responsive websites and progressive web apps.">
+<meta property="article:published_time" content="2016-06-28T19:53:58+00:00">
+<meta property="article:modified_time" content="2016-07-18T01:40:46+00:00">
+<meta property="og:site_name" content="Cloud Four">
+<meta property="og:image" content="https://cdn.cloudfour.com/wp-content/themes/cloudfour/open-graph-image-default.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:site" content="@CloudFour">
+<meta name="twitter:card" content="summary">
+
+  </head>
+
+  <body class="page-template page-template-template-our-work page-template-template-our-work-php page page-id-4265" data-template="base.twig" style="will-change: transform;">
+
+    <div class="Sky ">
+  <div class="u-containSpread">
+    <header class="Sky-nav" role="banner">
+      <ul class="Sky-nav-controls">
+                <li><a class="Sky-nav-controls-skipToMain Button Button--defaultDark u-textNoWrap u-hiddenTillFocus" href="#main">Skip to main content</a></li>
+        <li><a class="Sky-nav-controls-skipToMenu Button Button--defaultDark" href="#menu" aria-label="Skip to navigation">Menu</a></li>
+      </ul>
+      <a class="Sky-nav-logo" href="/">
+               <img src="static/index/mq2-fb.png">
+      </a>
+            <nav class="Sky-nav-menu is-active" role="navigation" id="menu">
+        <ul class="Sky-nav-menu-items">
+      <li><a class="Sky-nav-menu-item" href="/" aria-current="">Home</a></li>
+      <li><a class="Sky-nav-menu-item" href="/approach">Approach</a></li>
+      <li><a class="Sky-nav-menu-item" href="/products">Products</a></li>
+      <li><a class="Sky-nav-menu-item" href="/download">Download</a></li>
+      <li><a class="Sky-nav-menu-item" href="/community">Community</a></li>
+      <li><a class="Sky-nav-menu-item" href="/shop">Shop</a></li>
+      <li><a class="Sky-nav-menu-item" href="#">Team</a></li>
+  </ul>
+      </nav>
+    </header>
+  </div>
+</div>
+
+    <main role="main" id="main">
+
+              <div class="Sky Sky--clouds">
+          <div class="u-containSpread">
+              <div class="u-pad1">
+    <h1 class="u-textGrow5 u-sm-textGrow6">
+              Shop
+          </h1>
+    <p class="u-textGrow1 u-containProse u-spaceSidesNone">
+      Welcome to visit our distributor and partners.
+    </p>
+  </div>
+          </div>
+        </div>
+      
+      <div class="u-bgWhite">
+          <div class="u-containSpread u-pad1">
+          <div class="Grid Grid--alignMiddle Grid--withGutter u-padEnds6">
+        <div class="Grid-cell u-sm-size3of4 u-md-size1of2 u-flexExpand u-md-spaceSidesNone">
+          <div class="FlexEmbed WorkImage WorkImage--tilt">
+  <div class="FlexEmbed-ratio FlexEmbed-ratio--4by3"></div>
+  <div class="FlexEmbed-content">
+    <svg class="u-posAbsoluteCenter u-block u-md-size7of8 u-lg-size3of4" role="presentation" viewBox="0 0 922 684">
+              <defs>
+          <clipPath id="WorkImage-viewportLarge">
+            <path d="M3 33 L845 33 Q845 33 845 33 L845 644 Q845 653 836 653 L12 653 Q3 653 3 644 L3 33 Q3 33 3 33 Z"></path>
+          </clipPath>
+          <g id="WorkImage-frameLarge">
+            <rect class="WorkImage-bezel" width="848" height="656" rx="10"></rect>
+            <circle class="WorkImage-detail" cx="17" cy="17" r="6"></circle>
+            <path class="WorkImage-screen" d="M3.5 33.5 L844.5 33.5 Q844.5 33.5 844.5 33.5 L844.5 644 Q844.5 652.5 836 652.5 L12 652.5 Q3.5 652.5 3.5 644 L3.5 33.5 Q3.5 33.5 3.5 33.5 Z"></path>
+          </g>
+          <g id="WorkImage-frameSmall">
+            <rect class="WorkImage-bezel" width="250" height="468" rx="20"></rect>
+            <circle class="WorkImage-detail" cx="125" cy="25" r="6"></circle>
+            <rect class="WorkImage-detail WorkImage-detail--alt" x="95" y="434" width="60" height="18" rx="9"></rect>
+            <rect class="WorkImage-screen" x="3.5" y="50.5" width="243" height="367"></rect>
+          </g>
+        </defs>
+            <g class="WorkImage-large">
+        <use xlink:href="#WorkImage-frameLarge"></use>
+                  <image xlink:href="static/community/ti-design-big.png" x="3" y="33" width="842" height="620" preserveAspectRatio="xMidYMin slice" clip-path="url(#WorkImage-viewportLarge)"></image>
+              </g>
+      <g class="WorkImage-small" transform="rotate(6 50 50)">
+        <use xlink:href="#WorkImage-frameSmall" x="670" y="120"></use>
+                  <image xlink:href="static/community/ti-design-small.png" x="673" y="170" width="244" height="368" preserveAspectRatio="xMidYMin slice"></image>
+              </g>
+    </svg>
+  </div>
+</div>
+        </div>
+        <div class="Grid-cell u-sm-size3of4 u-md-size5of12 u-spaceTop1 u-md-spaceTopNone u-flexExpand u-md-spaceNone">
+        <a href="http://www.ti.com/devnet/docs/catalog/companyfolder.tsp?actionPerformed=companyFolder&companyId=15198" class="u-linkClean">
+          <h2>TI Design Network</h2>
+        </a>
+        <p>
+          </p><p></p>
+
+        <p></p>
+        <a href="http://www.ti.com/devnet/docs/catalog/companyfolder.tsp?actionPerformed=companyFolder&companyId=15198" class="u-linkClean">
+          <button class="Button Button--primary u-spaceTop2">
+            Buy Now
+            <svg viewBox="0 0 24 24" width="24" height="24" class="Icon Icon--large" role="presentation"><g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 5 22 12 15 19"></polyline><line x1="20" y1="12" x2="2" y2="12"></line></g></svg>
+
+          </button>
+        </a>
+        </div>
+      </div>
+
+      <hr>
+      <br>
+      <center><h1>NutsBoard Partners</h1></center>
+    <h2 class="u-hiddenVisually">Other clients we've worked with:</h2>
+    <div class="Grid Grid--alignCenter Grid--alignMiddle u-padEnds3 u-md-padEnds6">
+              <div class="Grid-cell u-size1of2 u-sm-size1of3 u-md-size1of4 u-textCenter">
+          <img src="static/community/ti_design.png" alt="ti-design" class="u-pad03">
+        </div>
+              <div class="Grid-cell u-size1of2 u-sm-size1of3 u-md-size1of4 u-textCenter">
+          <img src="static/community/canonical.png" alt="canonical" class="u-pad03">
+        </div>
+              <div class="Grid-cell u-size1of2 u-sm-size1of3 u-md-size1of4 u-textCenter">
+          <img src="static/community/texim.png" alt="texim" class="u-pad03">
+        </div>
+          </div>
+
+  </div>
+        <div class="u-containSpread">
+  <hr class="u-space1 u-spaceBottomNone">
+  <div class="u-posRelative">
+    <p class="u-pad1 u-size2of3">
+      <span class="u-inlineBlock u-textGrow1 u-spaceRight u-textNoWrap">
+        Let’s discuss your project!
+      </span>
+      <a class="Button Button--primary u-spaceEnds01 u-textNoWrap" href="mailto:nutsboard@gmail.com">
+        <svg viewBox="0 0 24 24" width="24" height="24" class="Icon Icon--large u-spaceRight06" role="presentation"><path d="M0,5c0-1.1,0.9-2,2-2h20c1.1,0,2,0.9,2,2v2c0,0-7.9,5-12,5C8.1,12,0,7,0,7V5z"></path><path d="M24,17c0,1.1-0.9,2-2,2H2c-1.1,0-2-0.9-2-2V9c0,0,7.9,5,12,5c3.9,0,12-5,12-5V17z"></path></svg>
+
+        Email Us
+      </a>
+    </p>
+  </div>
+</div>
+      </div>
+
+    </main>
+
+    <footer class="u-containSpread u-padSides1 u-padTop2 u-padBottom3" role="contentinfo">
+  <div class="Grid u-posRelative">
+    <div class="Grid-cell u-sm-size1of2 u-md-size1of3">
+      <p>
+        <a href="http://www.nutsboard.org"><strong>NutsBoard.Org</strong></a>
+      </p>
+      <p>
+        No.10, Rong-an,Road, Luzhu Dist., <br>
+        Taoyuan City, Taiwan(R.O.C.)
+      </p>
+      <ul class="u-listUnstyled">
+        <li><a href="mailto:mqservice01@gmail.com">nutsboard@gmail.com</a></li>
+        <li><a href="tel:88633222201883">+886 3-3222201 ext:516</a></li>
+      </ul>
+
+    </div>
+    <hr class="Grid-cell u-md-hidden u-spaceTop1 u-spaceBottomNone">
+    <p class="Grid-cell u-spaceTop1 u-md-sizeFit u-md-flexAlignSelfEnd u-md-flexExpandLeft">
+      <small>© 2017 NutsBoard, Org.</small>
+    </p>
+  </div>
+</footer>
+
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-3114940-1', 'cloudfour.com');ga('send', 'pageview');</script><script type="text/javascript" src="static/community/polyfill.js"></script>
+<script type="text/javascript" src="static/community/main.js"></script>
+
+
+    <template id="offline-message-template">
+      <div class="Message Message--warning" id="offline-message">
+  <p>
+    You seem to be offline at the moment.
+    <span class="u-hidden u-md-inlineBlock">We’ll keep trying to connect.</span>
+    <a class="u-textNoWrap" href="">Try again</a>
+  </p>
+  <button class="Message-close" onclick="this.parentElement.remove()">
+        <svg viewBox="0 0 24 24" width="24" height="24" class="Icon Icon--block" aria-labelledby="Message-close-title"><title id="Message-close-title">Close</title><g transform="rotate(45 12 12)" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><line x1="12" y1="3" x2="12" y2="21"></line><line x1="3" y1="12" x2="21" y2="12"></line></g></svg>
+
+  </button>
+</div>
+    </template>
+  
+
+</body></html>
