@@ -20,6 +20,10 @@ def products():
 def walnut():
     return render_template('almond.html')
 
+@app.route("/pistachio")
+def pistachio():
+    return render_template('pistachio.html')
+
 @app.route("/download")
 def download():
     return render_template('download.html')
