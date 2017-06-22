@@ -16,10 +16,6 @@ def approach():
 def products():
     return render_template('products.html')
 
-@app.route("/almond")
-def walnut():
-    return render_template('almond.html')
-
 @app.route("/pistachio")
 def pistachio():
     return render_template('pistachio.html')
