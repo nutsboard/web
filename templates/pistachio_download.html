@@ -11,17 +11,9 @@
   <meta name="msapplication-config" content="/browserconfig.xml">
   <meta name="onesignal" content="wordpress-plugin">
           <link rel="manifest" href="#">
-          <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-          ga('create', 'UA-98519910-1', 'auto');
-          ga('send', 'pageview');
+<link rel="stylesheet" id="toolkit-css" href="static/almond_download/main.css" type="text/css" media="all">
 
-          </script>
-<link rel="stylesheet" id="toolkit-css" href="static/index/main.css" type="text/css" media="all">
 
 
 </head>
@@ -57,10 +49,10 @@
           <div class="u-containSpread">
               <div class="u-pad1 u-flex u-flexWrap u-flexAlignItemsBaseline">
     <h1 class="u-textGrow5 u-sm-textGrow6 u-spaceRight1">
-              Download
+              Pistachio
           </h1>
     <p>
-      All NutsBoard resource in here!
+      Toolchain, software images and SDK
     </p>
   </div>
           </div>
@@ -68,54 +60,67 @@
 
       <div class="u-bgWhite">
           <div class="u-containSpread u-pad1">
-          <h1 class="u-spaceEnds01">Download List</h1>
-      <div class="Grid Grid--withGutter">
-              </div>
-      <hr class="u-spaceEnds1">
-      <h1 class="u-spaceEnds01">System-On-Module</h1>
-
+    <h1 class="u-spaceEnds01">Tools</h1>
     <div class="Grid Grid--withGutter">
-              <article class="Grid-cell u-spaceEnds01 u-spaceBottom1 u-sm-size1of2 u-md-size1of3">
-          <a href="/almond_download" class="u-linkBlock u-textInheritColor">
-            <div class="Thumbnail u-block u-pullSides1 u-sm-spaceSidesNone u-sm-borderRadius">
-                                            <img class="u-sizeFull" src="static/products/almond.png" alt="" sizes="(max-width: 29.9375em) 100vw,
-                         (max-width: 47.9375em), 50vw,
-                         33vw">
-                          </div>
-            <h2 class="u-spaceTop01 u-linkTarget">
-              Almond
-            </h2>
-            <p class="u-textBold">TI AM3352 CPU, 68x38mm</p>
-            <p class="u-sm-padRight">Announce date:01/2017</p>
-                      </a>
+
+              <article class="Grid-cell u-flex u-spaceEnds2 u-md-size1of2 u-lg-size1of3">
+          <div class="u-flex">
+            <div class="Thumbnail Thumbnail--circle u-flexAlignSelfStart u-flexShrink0">
+              <img src="static/almond_download/drizzle.png" alt="" style="width: 4rem; height: 4rem;">
+            </div>
+            <div class="u-spaceLeft u-flex u-flexCol u-size1of1">
+              <h3 class="u-textGrow1">Toolchain</h3>
+              <p class="u-md-padRight">Linaro GCC 5.3-2016.02 from recommended TI official website.</p>
+              <ul class="u-listInline u-padTop01 u-flexExpandTop">
+                <li><a href="https://releases.linaro.org/components/toolchain/binaries/5.3-2016.02/arm-linux-gnueabihf/gcc-linaro-5.3-2016.02-x86_64_arm-linux-gnueabihf.tar.xz">Source</a></li>
+              </ul>
+            </div>
+          </div>
         </article>
+              <article class="Grid-cell u-flex u-spaceEnds2 u-md-size1of2 u-lg-size1of3">
+          <div class="u-flex">
+            <div class="Thumbnail Thumbnail--circle u-flexAlignSelfStart u-flexShrink0">
+              <img src="static/almond_download/vm.png" alt="" style="width: 4rem; height: 4rem;">
+            </div>
+            <div class="u-spaceLeft u-flex u-flexCol u-size1of1">
+              <h3 class="u-textGrow1">VMware Image</h3>
+              <p class="u-md-padRight">NutsBoard customized an easy to develop environment.</p>
+              <ul class="u-listInline u-padTop01 u-flexExpandTop">
+                                  <li><a href="https://www.dropbox.com/s/dh20aajzodc95ye/20170724_nutsboard-vm_ubuntu-16.04.zip?dl=0">Ubuntu-16.04 LTS</a></li>
+                              </ul>
+            </div>
+          </div>
+        </article>
+              <article class="Grid-cell u-flex u-spaceEnds2 u-md-size1of2 u-lg-size1of3">
+          <div class="u-flex">
+            <div class="Thumbnail Thumbnail--circle u-flexAlignSelfStart u-flexShrink0">
+              <img src="static/almond_download/usbit.png" alt="" style="width: 4rem; height: 4rem;">
+            </div>
+            <div class="u-spaceLeft u-flex u-flexCol u-size1of1">
+              <h3 class="u-textGrow1">uSD card</h3>
+              <p class="u-md-padRight">It is easy to flashing the image for windows users.</p>
+              <ul class="u-listInline u-padTop01 u-flexExpandTop">
+                                  <li><a href="https://mega.nz/#!NsUkha4Q!NIyvA-bSPDTfGFNg8IlhSAbv7t9lGexmQlFDV3qt_b8">windows</a></li>
+                              </ul>
+            </div>
+          </div>
+        </article>
+    </div>
+    </div>
+    </div>
+
+      <div class="u-bgWhite">
+          <div class="u-containSpread u-pad1">
+    <h1 class="u-spaceEnds01">Resources - Pistachio SBC</h1>
+    <div class="Grid Grid--withGutter">
           </div>
 
-      <hr class="u-spaceEnds1">
-      <h1 class="u-spaceEnds01">Single-Board-Computer</h1>
+    <hr class="u-spaceEnds1 u-spaceBottom2">
 
+    <h1 class="u-spaceEnds01">Experiments</h1>
     <div class="Grid Grid--withGutter">
-              <article class="Grid-cell u-spaceEnds01 u-spaceBottom1 u-sm-size1of2 u-md-size1of3">
-          <a href="/pistachio_download" class="u-linkBlock u-textInheritColor">
-            <div class="Thumbnail u-block u-pullSides1 u-sm-spaceSidesNone u-sm-borderRadius">
-                                            <img class="u-sizeFull" src="static/products/pistacho.jpg" alt="" sizes="(max-width: 29.9375em) 100vw,
-                         (max-width: 47.9375em), 50vw,
-                         33vw">
-                          </div>
-            <h2 class="u-spaceTop01 u-linkTarget">
-             Pistachio
-            </h2>
-            <p class="u-textBold">NXP IMX6 CPU, 146x102mm</p>
-            <p class="u-sm-padRight">Will soon be released</p>
-                      </a>
-        </article>
           </div>
   </div>
-
-
-
-
-
         <div class="u-containSpread">
   <hr class="u-space1 u-spaceBottomNone">
   <div class="u-posRelative">
@@ -152,7 +157,7 @@
   </div>
 </footer>
 
-<script type="text/javascript" src="static/products/main.js"></script>
+<script type="text/javascript" src="static/almond_download/main.js"></script>
 
 
     <template id="offline-message-template">

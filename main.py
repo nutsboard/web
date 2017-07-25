@@ -28,6 +28,10 @@ def download():
 def almond_download():
     return render_template('almond_download.html')
 
+@app.route("/pistachio_download")
+def pistachio_download():
+    return render_template('pistachio_download.html')
+
 @app.route("/community")
 def community():
     return render_template('community.html')
