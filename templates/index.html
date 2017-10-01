@@ -23,6 +23,84 @@
           </script>
 <link rel="stylesheet" id="toolkit-css" href="static/index/main.css" type="text/css" media="all">
 
+<style>
+/* Slideshow container */
+.slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 20px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  font-weight:bolder;
+}
+
+.text-black {
+  color: #000000;
+  font-size: 20px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  font-weight:bolder;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 12px}
+}
+</style>
 
 </head>
 
@@ -56,18 +134,66 @@
               <div class="Sky">
           <div class="u-containSpread">
               <div class="Grid Grid--alignMiddle u-spaceBottom1">
-    <div class="Grid-cell u-md-size1of2 u-padSides1 u-md-padSidesNone u-md-flexOrderLast u-textCenter">
-      <img class="u-limitHeight2of3" src="static/index/web-app-1.png" alt="" style="width: 600px; height: 430px;">
-    </div>
+
+
     <div class="Grid-cell u-md-size1of2 u-padSides1 u-padBottom1 u-md-padTop1">
       <h1 class="u-textGrow5 u-sm-textGrow6 u-spaceRight1">
-                  ARM based Embedded PC Coming!
+                  ARM based Embedded Boards Coming!
               </h1>
       <p>
  NutsBoard Open Source Embedded Solutions
       </p>
     </div>
+
+
+  <div class="slideshow-container">
+
+      <div style="text-align:center">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      </div>
+
+        <div class="mySlides fade">
+        <img src="static/index/1.jpg" style="width:100%">
+        <div class="text">Long life time hardware and software</div>
+        </div>
+
+       <div class="mySlides fade">
+       <img src="static/index/2.jpg" style="width:100%">
+       <div class="text-black">Multiple OS with diversity applications</div>
+       </div>
+
+       <div class="mySlides fade">
+       <img src="static/index/3.jpg" style="width:100%">
+       <div class="text">Industrial grade design, much more stability</div>
+      </div>
+
+      </div>
+
+      <script>
+      var slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+          for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 8000); // Change image every 8 seconds
+    }
+    </script>
   </div>
+  <br>
           </div>
         </div>
 
@@ -83,7 +209,7 @@
         <div class="u-textCenter">
           <img style="height:16em" src="static/index/responsive.png">
           <h2>Embedded Fanless PC</h2>
-          <p>Both can support commercial and industrial type.</p>
+          <p>We can give customers useful experience to help mechanism design</p>
         </div>
       </div>
             <div class="Grid-cell u-sm-size1of2 u-lg-size1of3 u-spaceTop1">
@@ -138,20 +264,6 @@
           <h1 class="u-spaceEnds01">Future Events</h1>
       <div class="Grid Grid--withGutter">
 
-      <article class="Grid-cell u-flex u-spaceEnds01 u-sm-size1of2 u-md-size1of3">
-      <a href="http://coscup.org/2017/#/schedule" class="u-flex u-flexAlignItemsCenter u-linkClean u-textInheritColor">
-
-      <time class="CalendarDate CalendarDate--range" datetime="2017-08-05">
-      <span class="CalendarDate-header">Aug</span>
-      <span class="CalendarDate-body">5-6</span>
-      </time>
-      <div class="u-spaceLeft">
-      <h3 class="u-textGrow1 u-linkTarget">COSCUP 2017</h3>
-      <p class="u-textBold">Taipei, Taiwan</p>
-      <p>Shower: NutsBoard team</p>
-      </div>
-      </a>
-      </article>
       </div>
       </div>
 
