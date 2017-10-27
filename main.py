@@ -20,6 +20,10 @@ def products():
 def pistachio():
     return render_template('pistachio.html')
 
+@app.route("/pistachiolite")
+def pistachiolite():
+    return render_template('pistachio-lite.html')
+
 @app.route("/download")
 def download():
     return render_template('download.html')
