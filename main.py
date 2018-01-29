@@ -36,6 +36,10 @@ def almond_download():
 def pistachio_download():
     return render_template('pistachio_download.html')
 
+@app.route("/pistachioi-lite_download")
+def pistachiolite_download():
+    return render_template('pistachio-lite_download.html')
+
 @app.route("/community")
 def community():
     return render_template('community.html')
